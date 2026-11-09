@@ -19,6 +19,10 @@ Mocking allows you to test the `CardGame` application completely. It allows you 
 - Every time you complete a sub-task, commit and push your code.
 - At the end of the assignment, make sure you have pushed the entire project to the public repository.
 
+# Run Tests
+
+python -m unittest discover -v -s ./test/ -p test_*.py
+
 # Sub-tasks
 
 Remember to read and implement the sub-tasks one at a time, following the given order. Do not move on to the next sub-task until the current one has been completed. Implement the required unit tests by working in the `test/test_mock_ConsoleInOut.py`, `test/test_mock_Game.py`, `test/test_mock_LoadCSV.py` & `test/test_mock_Deck.py` files. 
@@ -83,11 +87,6 @@ To mock a function and verify the arguments passed to it.
 * Call play_a_card_from_deck(deck). Since the mock returns 0, assert that the returned card matches the first card in the deck.
 * Verify that random.randint was called exactly once with the expected arguments (0, 51) using mock_randint.assert_called_once_with(0, 51).
 * Push sub task to GitGub, [Go To GitHub Commit](#github-commit)
-
-
-# Run Tests
-
-python -m unittest discover -v -s ./test/ -p test_*.py
 
 # GitHub Commit
 * Open VS Code Terminal
