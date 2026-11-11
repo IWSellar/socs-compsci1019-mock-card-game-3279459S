@@ -23,8 +23,11 @@ class test_task(unittest.TestCase):
         self.assertEqual(numPlayers, 3)
 
     def test_get_integer_max_attempts(self):
-        #Sub-task 3 – Mock Console Input With Built In
-        pass
+        p = patch('card_game.communication.ConsoleInOut.get_string')
+        mock_func = p.start()
+        mock_func.return_value = 'abc'
+        integer = get_integer()
+        self.assertEqual(mock_func.call_count, 5)
 
     def test_get_csv_rows(self):
         #Sub-task 4 – Mock File Load
