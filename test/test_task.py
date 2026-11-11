@@ -8,8 +8,11 @@ from card_game.LoadCSV import *
 class test_task(unittest.TestCase):
 
     def test_get_input_integer(self):
-        #Sub-task 1: Mock Console Input Integer
-        pass
+        p = patch('card_game.communication.ConsoleInOut.get_string')
+        mock_func = p.start()
+        mock_func.return_value = 18
+        self.assertEqual(get_input_integer(''), 18)
+        p.stop()
 
     def test_get_game_info(self):
         #Sub-task 2 – Mock Console Game Info
