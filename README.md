@@ -85,7 +85,7 @@ To mock a function and verify the arguments passed to it.
 * Mock random.randint in card_game.card.entity.Deck to return 0, so that the first card in the deck is selected.
 * Create a full deck of 52 cards using create_deck() and record the first card.
 * Call play_a_card_from_deck(deck). Since the mock returns 0, assert that the returned card matches the first card in the deck.
-* Verify that random.randint was called exactly once with the expected arguments (0, 51) using mock_randint.assert_called_once_with(0, 51).
+* Verify that random.randint was called exactly once with the expected arguments (0, 51).
 * Push sub task to GitGub, [Go To GitHub Commit](#github-commit)
 
 # GitHub Commit
