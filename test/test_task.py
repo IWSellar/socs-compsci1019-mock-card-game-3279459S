@@ -1,5 +1,6 @@
 import unittest
 from unittest.mock import patch
+from io import StringIO
 from card_game.communication.ConsoleInOut import *
 from card_game.card.entity.Deck import *
 from card_game.Game import *
@@ -30,8 +31,12 @@ class test_task(unittest.TestCase):
         self.assertEqual(mock_func.call_count, 5)
 
     def test_get_csv_rows(self):
-        #Sub-task 4 – Mock File Load
-        pass
+        p = patch('card_game.LoadCSV.create_csv_reader')
+        mock_func = p.start()
+        mock_func.return_value = StringIO("""Derek\nXi""")
+        vals = get_csv_rows("test")
+        print(vals)
+        self.assertEqual(vals[1][0], "Xi")
 
     def test_play_a_card_from_deck_random(self):
         #Sub-task 5 – Mock Get Player Names
