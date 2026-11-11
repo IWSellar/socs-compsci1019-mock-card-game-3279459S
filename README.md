@@ -25,7 +25,7 @@ python -m unittest discover -v -s ./test/ -p test_*.py
 
 # Sub-tasks
 
-Remember to read and implement the sub-tasks one at a time, following the given order. Do not move on to the next sub-task until the current one has been completed. Implement the required unit tests by working in the `test/test_mock_ConsoleInOut.py`, `test/test_mock_Game.py`, `test/test_mock_LoadCSV.py` & `test/test_mock_Deck.py` files. 
+Remember to read and implement the sub-tasks one at a time, following the given order. Do not move on to the next sub-task until the current one has been completed. Implement the required unit tests by working in the `test/test_task.py` file. 
 
 ## Sub-task 1 – Mock Console Input Integer
 
@@ -33,7 +33,7 @@ To mock an input from the console.
 
 ### Requirement
 
-* Implement unit test `test_get_input_integer` in `test/test_mock_ConsoleInOut.py` to mock a method.
+* Implement unit test `test_get_input_integer` in `test/test_task.py` to mock a method.
 * We want to test `ConsoleInOut.get_input_integer` that calls `get_string` to get an input from the console.
 * Mock the method `get_string` to return "18"
 * The expected output of the unit test, namely the value returned by `ConsoleInOut.get_input_integer`, should be 18 (number, not string).
@@ -45,7 +45,7 @@ To mock an input from the console.
 
 ### Requirement
 
-* Implement unit test `test_get_game_info` in `test/test_mock_Game.py` to mock a method.
+* Implement unit test `test_get_game_info` in `test/test_task.py` to mock a method.
 * We want to test `Game.get_game_info` that calls `get_input_string` and `get_input_integer` to get an inputs from the console.
 * Mock the method `get_string` so that it returns "Derek" on the first call and "3" on the second call. 
 * The expected output of the unit test, namely the value returned by `Game.get_game_info`, should be 3 (number, not string). 
@@ -57,7 +57,7 @@ To mock an input from the console and verify how many times it was called.
  
 ### Requirement
  
-* Implement unit test `test_get_integer_max_attempts` in `test/test_mock_ConsoleInOut.py` to mock a function and verify its usage.
+* Implement unit test `test_get_integer_max_attempts` in `test/test_task.py` to mock a function and verify its usage.
 * We want to test `ConsoleInOut.get_integer` (that calls `get_string` to get an input from the console) when the user continually inputs an invalid string. The function ‘ConsoleInOut.get_integer` is supposed to retry 5 times before giving up.
 * Mock the `card_game.communication.ConsoleInOut.get_string` function to always return `abc`.
 * The expected output of the unit test, namely the value returned by `ConsoleInOut.get_integer`, should be -1.
@@ -70,7 +70,7 @@ To mock the opening of a file.
 
 ### Requirement
 
-* Implement unit test `test_get_csv_rows` in `test/test_mock_LoadCSV.py` to mock the opening of a file. 
+* Implement unit test `test_get_csv_rows` in `test/test_task.py` to mock the opening of a file. 
 * We want to test `LoadCSV.get_csv_rows` that calls `create_csv_reader` to open a file.
 * Mock file opening to return the following content: "Derek\nXi". Namely, the mocked file must provide the content `"Derek\nXi"` when read. 
 * Call `get_csv_rows` with any file name. The file does not need to exist, because the opening is mocked.
@@ -80,7 +80,7 @@ To mock the opening of a file.
 ## Sub-task 5 – Verify Mock Call Arguments
 To mock a function and verify the arguments passed to it.
 ### Requirement
-* Implement unit test test_play_a_card_from_deck_random in test/test_mock_Deck.py to mock the random selection of a card.
+* Implement unit test test_play_a_card_from_deck_random in test/test_task.py to mock the random selection of a card.
 * We want to test Deck.play_a_card_from_deck, which calls random.randint(0,index) to select a random card when the deck contains more than 8 cards. For a full deck of 52 cards, the upper bound is 51.
 * Mock random.randint in card_game.card.entity.Deck to return 0, so that the first card in the deck is selected.
 * Create a full deck of 52 cards using create_deck() and record the first card.
