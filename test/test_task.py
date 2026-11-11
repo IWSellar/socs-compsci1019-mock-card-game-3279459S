@@ -15,8 +15,12 @@ class test_task(unittest.TestCase):
         p.stop()
 
     def test_get_game_info(self):
-        #Sub-task 2 – Mock Console Game Info
-        pass
+        p = patch('card_game.communication.ConsoleInOut.get_string')
+        mock_func = p.start()
+        mock_func.side_effect = ["Derek", 3]
+        name, numPlayers = get_game_info()
+        self.assertEqual(name, "Derek")
+        self.assertEqual(numPlayers, 3)
 
     def test_get_integer_max_attempts(self):
         #Sub-task 3 – Mock Console Input With Built In
